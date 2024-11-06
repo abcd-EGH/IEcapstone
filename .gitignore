@@ -1,2 +1,3 @@
 NAB/
-ipynb_checkpoints/
+.ipynb_checkpoints/
+weight/
