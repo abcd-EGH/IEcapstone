@@ -5,9 +5,17 @@
 - REFERENCE: **Tung Kieu, Bin Yang, Chenjuan Guo, Christian S. Jensen, Outlier Detection for Time Series with Recurrent Autoencoder Ensembles, IJCAI 2019.**, https://github.com/tungk/OED
 ## Abstact
 ### Dataset
-- The Numenta Anomaly Benchmark (NAB)
-    - https://github.com/numenta/NAB
-    - https://doi.org/10.5281/zenodo.1040335
+This implementation uses the following publicly available dataset:
+- NAB (Numenta Anomaly Benchmark): For anomaly detection in time series data.
+
+To use the dataset, please refer to the original paper or download them directly from the provided sources.
+
+E.g. Download w/ Git Commend
+```bash
+git clone https://github.com/numenta/NAB.git
+```
+- https://github.com/numenta/NAB
+- https://doi.org/10.5281/zenodo.1040335
 
 ### Defaults for Hyper-Parameter
 - Limitation of skip steps(L) = 10 (L: length of skip connection, this ensemble model randomly selects the L of each AutoEncoder.)
