@@ -80,34 +80,41 @@ git clone https://github.com/numenta/NAB.git
 
 ### Quantitative Results
 #### Table 1: Performance on **machine_temperature_system_failure**
-| Model          | Precision | Recall  | F1-Score |
-|----------------|-----------|---------|----------|
-| Base           | 0.7612    | 0.3810  | 0.5078   |
-| Residual       | 0.7683    | 0.3845  | 0.5125   |
-| Concatenation  | 0.7110    | 0.3558  | 0.4743   |
-| VariableSkip   | 0.8035    | 0.4021  | 0.5360   |
-| Bi-directional | 0.7410    | 0.3708  | 0.4943   |
-| Attention      | 0.5040    | 0.2522  | 0.3362   |
+| Model          | Precision | Recall  | F1-Score     |
+|----------------|-----------|---------|--------------|
+| Base           | 0.7612    | 0.3810  | 0.5078       |
+| Residual       | 0.7683    | 0.3845  | **0.5125**   |
+| Concatenation  | 0.7110    | 0.3558  | 0.4743       |
+| VariableSkip   | 0.8035    | 0.4021  | **0.5360**   |
+| Bi-directional | 0.7410    | 0.3708  | 0.4943       |
+| Attention      | 0.5040    | 0.2522  | 0.3362       |
 
 #### Table 2: Performance on **ec2_cpu_utilization_825cc2**
-| Model          | Precision | Recall  | F1-Score |
-|----------------|-----------|---------|----------|
-| Base           | 0.5347    | 0.3149  | 0.3963   |
-| Residual       | 0.5446    | 0.3207  | 0.4037   |
-| Concatenation  | 0.5495    | 0.3236  | 0.4073   |
-| VariableSkip   | 0.5396    | 0.3178  | 0.4000   |
-| Bi-directional | 0.5347    | 0.3149  | 0.3963   |
-| Attention      | 0.6238    | 0.3673  | 0.4624   |
+| Model          | Precision | Recall  | F1-Score     |
+|----------------|-----------|---------|--------------|
+| Base           | 0.5347    | 0.3149  | 0.3963       |
+| Residual       | 0.5446    | 0.3207  | **0.4037**   |
+| Concatenation  | 0.5495    | 0.3236  | **0.4073**   |
+| VariableSkip   | 0.5396    | 0.3178  | **0.4000**   |
+| Bi-directional | 0.5347    | 0.3149  | 0.3963       |
+| Attention      | 0.6238    | 0.3673  | **0.4624**   |
 
 #### Table 3: Performance on **art_daily_jumpsup**
-| Model          | Precision | Recall  | F1-Score |
-|----------------|-----------|---------|----------|
-| Base           | 0.5743    | 0.2878  | 0.3835   |
-| Residual       | 0.5545    | 0.2779  | 0.3702   |
-| Concatenation  | 0.5842    | 0.2928  | 0.3901   |
-| VariableSkip   | 0.5594    | 0.2804  | 0.3736   |
-| Bi-directional | 0.5842    | 0.2928  | 0.3901   |
-| Attention      | 0.5050    | 0.2531  | 0.3372   |
+| Model          | Precision | Recall  | F1-Score     |
+|----------------|-----------|---------|--------------|
+| Base           | 0.5743    | 0.2878  | 0.3835       |
+| Residual       | 0.5545    | 0.2779  | 0.3702       |
+| Concatenation  | 0.5842    | 0.2928  | **0.3901**   |
+| VariableSkip   | 0.5594    | 0.2804  | 0.3736       |
+| Bi-directional | 0.5842    | 0.2928  | **0.3901**   |
+| Attention      | 0.5050    | 0.2531  | 0.3372       |
+
+#### Table 4: Performance of Variable Skip according to _L_ on **art_daily_jumpsup**
+| Model          | Precision | Recall  | F1-Score     |
+|----------------|-----------|---------|--------------|
+| L=1            | 0.5644    | 0.2829  | **0.3769**   |
+| L=5            | 0.5545    | 0.2779  | 0.3702       |
+| L=9            | 0.1386    | 0.0695  | 0.0926       |
 
 ### Qualitative Results
 _In each hypothesis ipynb file, you can find qualitative results such as **Reconstructed data and errors**, **AUC-ROC curves**, and so on._
@@ -149,7 +156,6 @@ _In each hypothesis ipynb file, you can find qualitative results such as **Recon
 
 #### Solution
 - Train models with different \( L \) values independently and use only the averaged outputs for predictions. This approach avoids interdependence and interference during the learning process.
-
 
 ## REFERENCE
 1. Kieu, T., Yang, B., Guo, C., & Jensen, C. S. (2019). Outlier detection for time series with recurrent autoencoder ensembles. Proceedings of the Twenty-Eighth International Joint Conference on Artificial Intelligence (IJCAI), 2725–2732. https://doi.org/10.24963/ijcai.2019/378
